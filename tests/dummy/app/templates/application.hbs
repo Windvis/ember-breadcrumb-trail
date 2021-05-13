@@ -1,5 +1,37 @@
-{{page-title "Dummy"}}
+{{page-title "ember-breadcrumb-trail"}}
+{{breadcrumb "Home" route="index"}}
 
-<h2 id="title">Welcome to Ember</h2>
+<nav aria-label="primary">
+  <ol>
+    <li>
+      <LinkTo @route="index">Home</LinkTo>
+    </li>
+    <li>
+      <LinkTo @route="foo">Foo</LinkTo>
+    </li>
+    <li>
+      <LinkTo @route="foo.bar">Bar</LinkTo>
+    </li>
+    <li>
+      <LinkTo @route="foo.bar.baz">Baz</LinkTo>
+    </li>
+  </ol>
+</nav>
+
+<nav aria-label="breadcrumbs">
+  <ol>
+    {{#each (breadcrumbs) as |breadcrumb|}}
+      <li>
+        {{#if breadcrumb.route}}
+          <LinkTo @route={{breadcrumb.route}}>
+            {{breadcrumb.title}}
+          </LinkTo>
+        {{else}}
+          {{breadcrumb.title}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ol>
+</nav>
 
 {{outlet}}
