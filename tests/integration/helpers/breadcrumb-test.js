@@ -17,7 +17,7 @@ module('Integration | Helper | breadcrumb', function (hooks) {
       {{breadcrumb "foo"}}
     `);
 
-    assert.dom('[data-test-breadcrumb-item]').containsText('foo');
+    assert.dom('[data-test-breadcrumb-item]').hasText('foo');
   });
 
   test('it combines all positional arguments into a single title', async function (assert) {
@@ -31,7 +31,7 @@ module('Integration | Helper | breadcrumb', function (hooks) {
       {{breadcrumb "foo" "bar" "baz"}}
     `);
 
-    assert.dom('[data-test-breadcrumb-item]').containsText('foo bar baz');
+    assert.dom('[data-test-breadcrumb-item]').hasText('foo bar baz');
   });
 
   test("it's possible to access the passed in named arguments through the `data` key", async function (assert) {
@@ -49,9 +49,9 @@ module('Integration | Helper | breadcrumb', function (hooks) {
       {{breadcrumb "foo" route="index" isLink=false}}
     `);
 
-    assert.dom('[data-test-title]').containsText('foo');
-    assert.dom('[data-test-route]').containsText('index');
-    assert.dom('[data-test-is-link]').containsText('false');
+    assert.dom('[data-test-title]').hasText('foo');
+    assert.dom('[data-test-route]').hasText('index');
+    assert.dom('[data-test-is-link]').hasText('false');
   });
 
   test("it's possible to add multiple breadcrumbs from the same template", async function (assert) {
@@ -70,8 +70,8 @@ module('Integration | Helper | breadcrumb', function (hooks) {
       '[data-test-breadcrumb-item]'
     );
     assert.equal(breadcrumbs.length, 2);
-    assert.dom(breadcrumbs[0]).containsText('foo');
-    assert.dom(breadcrumbs[1]).containsText('bar');
+    assert.dom(breadcrumbs[0]).hasText('foo');
+    assert.dom(breadcrumbs[1]).hasText('bar');
   });
 
   test('it updates the breadcrumb when data changes', async function (assert) {
