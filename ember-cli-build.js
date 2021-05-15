@@ -15,5 +15,11 @@ module.exports = function (defaults) {
   */
 
   const { maybeEmbroider } = require('@embroider/test-setup');
-  return maybeEmbroider(app);
+  return maybeEmbroider(app, {
+    skipBabel: [
+      {
+        package: 'qunit', // More information: https://github.com/embroider-build/embroider/issues/731
+      },
+    ],
+  });
 };
