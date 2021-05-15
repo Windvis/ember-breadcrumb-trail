@@ -22,8 +22,11 @@
   <ol>
     {{#each (breadcrumbs) as |breadcrumb|}}
       <li>
-        {{#if breadcrumb.route}}
-          <LinkTo @route={{breadcrumb.route}}>
+        {{#if breadcrumb.data.route}}
+          <LinkTo
+            @route={{breadcrumb.data.route}}
+            aria-current={{if (is-last breadcrumb (breadcrumbs)) "page"}}
+          >
             {{breadcrumb.title}}
           </LinkTo>
         {{else}}
