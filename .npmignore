@@ -23,9 +23,9 @@
 /.watchmanconfig
 /bower.json
 /config/ember-try.js
-/CHANGELOG.md
 /CONTRIBUTING.md
 /ember-cli-build.js
+/RELEASE.md
 /testem.js
 /tests/
 /yarn.lock
