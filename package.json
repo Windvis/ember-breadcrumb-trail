@@ -1,13 +1,17 @@
 {
   "name": "ember-breadcrumb-trail",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "A minimalistic but very flexible breadcrumb management solution for Ember applications.",
   "keywords": [
+    "breadcrumbs",
     "ember-addon"
   ],
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Windvis/ember-breadcrumb-trail.git"
+  },
   "license": "MIT",
-  "author": "",
+  "author": "Windvis",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -66,7 +70,7 @@
     "qunit-dom": "^1.6.0"
   },
   "engines": {
-    "node": "10.* || >= 12"
+    "node": ">= 12"
   },
   "ember": {
     "edition": "octane"
