@@ -1,6 +1,6 @@
 {
   "name": "ember-breadcrumb-trail",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A minimalistic but very flexible breadcrumb management solution for Ember applications.",
   "keywords": [
     "breadcrumbs",
