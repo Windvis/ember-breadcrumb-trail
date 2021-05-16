@@ -44,13 +44,13 @@ Positional arguments are used as the title for the breadcrumb. Multiple position
 > The title can be accessed with the `title` property of the breadcrumb object.
 
 #### Named arguments
-Any data that you need to render your breadcrumbs can be passed in as named arguments. The primary use-case for this is to pass the needed data to link the breadcrumb to a specific route.
+Any data that you need to render your breadcrumbs can be passed in as named arguments. This can be used to pass route information so that the breadcrumb can be linked to it.
 
-> The passed in named arguments will be available under the `data` property of the breadcrumb object.
+> The named arguments will be available under the `data` property of the breadcrumb object.
 
 
 ### `{{breadcrumbs}}` helper
-This helper simply returns the registered breadcrumbs and can be used wherever you want to display them. The data can easily be looped over `{{#each}}` and combined with other helpers if extra data manipulation is needed.
+This helper simply returns the registered breadcrumbs and can be used wherever you want to display them. The breadcrumb data can easily be looped over with `{{#each}}` and combined with other helpers if extra data manipulation is needed.
 
 #### Returns
 Array of registered breadcrumbs (objects)
