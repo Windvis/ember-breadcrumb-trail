@@ -28,7 +28,7 @@ module('Integration | Helper | breadcrumb', function (hooks) {
         {{/each}}
       </ol>
 
-      {{breadcrumb "foo" "bar" "baz"}}
+      {{breadcrumb "foo" " bar " "baz"}}
     `);
 
     assert.dom('[data-test-breadcrumb-item]').hasText('foo bar baz');

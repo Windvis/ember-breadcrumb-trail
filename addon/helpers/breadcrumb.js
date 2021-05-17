@@ -11,7 +11,7 @@ export default class BreadcrumbHelper extends Helper {
   }
 
   compute(breadcrumbTitleParts, optionalData) {
-    let breadcrumbTitle = breadcrumbTitleParts.join(' ');
+    let breadcrumbTitle = breadcrumbTitleParts.join('');
 
     let breadcrumbData = {
       data: optionalData,

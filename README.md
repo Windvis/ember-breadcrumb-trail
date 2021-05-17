@@ -32,13 +32,13 @@ Usage
 This helper allows you to add breadcrumbs and is the equivalent of the `page-title` helper but for breadcrumbs.
 
 #### Positional argument(s)
-Positional arguments are used as the title for the breadcrumb. Multiple positional arguments will be combined into a single title (separated by spaces). 
+Positional arguments are used as the title for the breadcrumb. Multiple positional arguments will be combined into a single title. 
 
 ```hbs
 {{breadcrumb "Home"}}
 {{! "Home" }}
 
-{{breadcrumb "Hottest JS framework 🔥:" this.hottestFramework }}
+{{breadcrumb "Hottest JS framework 🔥: " this.hottestFramework}}
 {{! "Hottest JS framework 🔥: Ember" }}
 ```
 > The title can be accessed with the `title` property of the breadcrumb object.
