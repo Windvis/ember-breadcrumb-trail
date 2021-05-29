@@ -13,7 +13,10 @@ module('Integration | Helper | breadcrumbs', function (hooks) {
       @tracked items = [];
     }
 
-    this.owner.register('service:breadcrumbs', MockBreadcrumbsService);
+    this.owner.register(
+      'service:ember-breadcrumb-trail@breadcrumbs',
+      MockBreadcrumbsService
+    );
 
     await render(hbs`
       <ol>
@@ -25,7 +28,9 @@ module('Integration | Helper | breadcrumbs', function (hooks) {
 
     assert.dom('[data-test-breadcrumb-item]').doesNotExist();
 
-    let breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    let breadcrumbsService = this.owner.lookup(
+      'service:ember-breadcrumb-trail@breadcrumbs'
+    );
     breadcrumbsService.items = [
       {
         title: 'foo',

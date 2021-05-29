@@ -2,7 +2,7 @@ import Helper from '@ember/component/helper';
 import { inject as service } from '@ember/service';
 
 export default class BreadcrumbHelper extends Helper {
-  @service('breadcrumbs') breadcrumbsService;
+  @service('ember-breadcrumb-trail@breadcrumbs') breadcrumbsService;
 
   breadcrumbId = null;
 

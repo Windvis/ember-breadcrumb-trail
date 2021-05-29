@@ -6,13 +6,17 @@ module('Unit | Service | breadcrumbs', function (hooks) {
   setupTest(hooks);
 
   test("it doesn't contain any breadcrumbs by default", async function (assert) {
-    let breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    let breadcrumbsService = this.owner.lookup(
+      'service:ember-breadcrumb-trail@breadcrumbs'
+    );
 
     assert.equal(breadcrumbsService.items.length, 0);
   });
 
   test("it's possible to add new breadcrumbs with the addBreadcrumb method", async function (assert) {
-    let breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    let breadcrumbsService = this.owner.lookup(
+      'service:ember-breadcrumb-trail@breadcrumbs'
+    );
 
     breadcrumbsService.addBreadcrumb({
       title: 'foo',
@@ -32,7 +36,9 @@ module('Unit | Service | breadcrumbs', function (hooks) {
   });
 
   test('it returns a unique id when adding a breadcrumb', async function (assert) {
-    let breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    let breadcrumbsService = this.owner.lookup(
+      'service:ember-breadcrumb-trail@breadcrumbs'
+    );
 
     let firstId = breadcrumbsService.addBreadcrumb({
       title: 'foo',
@@ -49,7 +55,9 @@ module('Unit | Service | breadcrumbs', function (hooks) {
   });
 
   test("it's possible to update breadcrumbs with the updateBreadcrumb method", async function (assert) {
-    let breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    let breadcrumbsService = this.owner.lookup(
+      'service:ember-breadcrumb-trail@breadcrumbs'
+    );
 
     let firstId = breadcrumbsService.addBreadcrumb({
       title: 'foo',
@@ -72,7 +80,9 @@ module('Unit | Service | breadcrumbs', function (hooks) {
   });
 
   test("it's possible to remove breadcrumbs with the removeBreadcrumb method", async function (assert) {
-    let breadcrumbsService = this.owner.lookup('service:breadcrumbs');
+    let breadcrumbsService = this.owner.lookup(
+      'service:ember-breadcrumb-trail@breadcrumbs'
+    );
 
     let firstId = breadcrumbsService.addBreadcrumb({
       title: 'foo',
