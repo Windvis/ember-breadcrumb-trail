@@ -58,7 +58,7 @@ Array of registered breadcrumbs (objects)
 ### Examples
 
 #### a11y
-This simple example implements an [a11y friendly breadcrumb structure](https://www.w3.org/TR/wai-aria-practices/#breadcrumb) using Ember's `<LinkTo>` component and a custom `is-last` helper.
+This simple example implements an [a11y friendly breadcrumb structure](https://www.w3.org/TR/wai-aria-practices/#breadcrumb) using Ember's `<LinkTo>` component and the [`{{has-next}}`](https://github.com/DockYard/ember-composable-helpers#has-next) helper from ember-composable-helpers to determine if a breadcrumb is the last breadcrumb in the list.
 
 ```hbs
 <nav aria-label="Breadcrumb">
@@ -67,7 +67,7 @@ This simple example implements an [a11y friendly breadcrumb structure](https://w
       <li>
         <LinkTo
           @route={{breadcrumb.data.route}}
-          aria-current={{if (is-last breadcrumb breadcrumbs) "page"}}
+          aria-current={{if (not (has-next breadcrumb breadcrumbs)) "page"}}
         >
           {{breadcrumb.title}}
         </LinkTo>
@@ -93,7 +93,7 @@ A similar example where ember-link is used instead of `<LinkTo>`.
       <li>
         <a
           href={{breadcrumb.data.link.href}}
-          aria-current={{if (is-last breadcrumb breadcrumbs) "page"}}
+          aria-current={{if (not (has-next breadcrumb breadcrumbs)) "page"}}
           {{on "click" breadcrumb.data.link.transitionTo}}
         >
           {{breadcrumb.title}}
