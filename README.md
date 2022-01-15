@@ -67,7 +67,7 @@ This simple example implements an [a11y friendly breadcrumb structure](https://w
       <li>
         <LinkTo
           @route={{breadcrumb.data.route}}
-          aria-current={{if (not (has-next breadcrumb breadcrumbs)) "page"}}
+          aria-current={{if (not (has-next breadcrumb (breadcrumbs))) "page"}}
         >
           {{breadcrumb.title}}
         </LinkTo>
@@ -93,7 +93,7 @@ A similar example where ember-link is used instead of `<LinkTo>`.
       <li>
         <a
           href={{breadcrumb.data.link.href}}
-          aria-current={{if (not (has-next breadcrumb breadcrumbs)) "page"}}
+          aria-current={{if (not (has-next breadcrumb (breadcrumbs))) "page"}}
           {{on "click" breadcrumb.data.link.transitionTo}}
         >
           {{breadcrumb.title}}
