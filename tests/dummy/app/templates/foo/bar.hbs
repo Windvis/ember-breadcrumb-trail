@@ -1,5 +1,5 @@
 {{page-title "Bar"}}
-{{breadcrumb "Bar: " this.number route="foo.bar"}}
+{{breadcrumb "Bar: " this.number route="foo.bar" model=this.model.id}}
 {{outlet}}
 
 <button type="button" {{on "click" this.getRandomNumber}}>Random</button>
