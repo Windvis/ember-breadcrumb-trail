@@ -1,0 +1,23 @@
+# compiled output
+/dist/
+/tmp/
+
+# misc
+/.editorconfig
+/.env*
+/.eslintcache
+/.eslintignore
+/.eslintrc.js
+/.gitignore
+/.prettierignore
+/.prettierrc.js
+/.template-lintrc.js
+/config/ember-try.js
+/ember-cli-build.js
+/yarn-error.log
+.gitkeep
+
+# ember-try
+/.node_modules.ember-try/
+/bower.json.ember-try
+/package.json.ember-try
