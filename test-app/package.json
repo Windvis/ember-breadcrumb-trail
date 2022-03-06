@@ -2,13 +2,7 @@
   "name": "test-app",
   "version": "0.2.0",
   "description": "Test app",
-  "keywords": [
-    "breadcrumbs"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Windvis/ember-breadcrumb-trail.git"
-  },
+  "private": "true",
   "license": "MIT",
   "author": "Windvis",
   "directories": {
