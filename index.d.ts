@@ -1,5 +1,5 @@
-declare module "ember-breadcrumb-trail/helpers/breadcrumb" {
-  import Helper from "@ember/component/helper";
+declare module 'ember-breadcrumb-trail/helpers/breadcrumb' {
+  import Helper from '@ember/component/helper';
 
   export default class Breadcrumb extends Helper<{
     Args: {
@@ -10,8 +10,8 @@ declare module "ember-breadcrumb-trail/helpers/breadcrumb" {
   }> {}
 }
 
-declare module "ember-breadcrumb-trail/helpers/breadcrumbs" {
-  import Helper from "@ember/component/helper";
+declare module 'ember-breadcrumb-trail/helpers/breadcrumbs' {
+  import Helper from '@ember/component/helper';
 
   export default class Breadcrumbs extends Helper<{
     Return: { title: string; data: { route: string; model: string } }[];
