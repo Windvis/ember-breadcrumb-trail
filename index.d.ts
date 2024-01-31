@@ -14,6 +14,6 @@ declare module 'ember-breadcrumb-trail/helpers/breadcrumbs' {
   import Helper from '@ember/component/helper';
 
   export default class Breadcrumbs extends Helper<{
-    Return: { title: string; data: { route: string; model: string } }[];
+    Return: { title: string; data: Record<string, unknown> }[];
   }> {}
 }
