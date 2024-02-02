@@ -69,7 +69,7 @@ module('Integration | Helper | breadcrumb', function (hooks) {
     let breadcrumbs = this.element.querySelectorAll(
       '[data-test-breadcrumb-item]',
     );
-    assert.equal(breadcrumbs.length, 2);
+    assert.strictEqual(breadcrumbs.length, 2);
     assert.dom(breadcrumbs[0]).hasText('foo');
     assert.dom(breadcrumbs[1]).hasText('bar');
   });
