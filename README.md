@@ -14,7 +14,7 @@ Compatibility
 * Ember.js v3.16 or above (lower versions might work, but aren't tested)
 * Ember CLI v3.16 or above
 * Node.js v12 or above
-* Works with Embroider (safe and optimized) and FastBoot
+* Works with Embroider (safe and optimized) 
 
 
 Installation
