@@ -15,6 +15,7 @@ Compatibility
 * Ember CLI v3.16 or above
 * Node.js v12 or above
 * Works with Embroider (safe and optimized) 
+* Publishes Glint types
 
 
 Installation
@@ -110,6 +111,30 @@ A similar example where ember-link is used instead of `<LinkTo>`.
 {{breadcrumb this.post.title link=(link "blog.post" this.post.id)}}
 ```
 
+## TypeScript and Glint
+### Loose-mode usage
+If your project uses loose-mode templates, you can merge in the template registry interface provided by ember-breadcrumb-trail:
+
+```ts
+// <your-app>/types/glint.d.ts
+import '@glint/environment-ember-loose';
+import '@glint/environment-ember-template-imports';
+
+import type EmberBreadcrumbTrailRegistry from 'ember-breadcrumb-trail/template-registry';
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry extends EmberBreadcrumbTrailRegistry {
+    /* your local loose-mode entries here */
+  }
+}
+```
+
+### Strict-mode usage
+To use the helpers in strict-mode templates, you can use the shorter import path:
+
+```gts
+import { breadcrumb, breadcrumbs } from 'ember-breadcrumb-trail';
+```
 
 
 Contributing
