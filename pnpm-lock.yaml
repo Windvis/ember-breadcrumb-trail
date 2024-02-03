@@ -222,6 +222,9 @@ importers:
       ember-source-channel-url:
         specifier: ^3.0.0
         version: 3.0.0
+      ember-template-imports:
+        specifier: ^4.0.0
+        version: 4.0.0
       ember-template-lint:
         specifier: ^5.13.0
         version: 5.13.0
@@ -231,18 +234,12 @@ importers:
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
-      eslint-config-prettier:
-        specifier: ^9.1.0
-        version: 9.1.0(eslint@8.56.0)
       eslint-plugin-ember:
         specifier: ^11.12.0
         version: 11.12.0(eslint@8.56.0)
       eslint-plugin-n:
         specifier: ^16.6.2
         version: 16.6.2(eslint@8.56.0)
-      eslint-plugin-prettier:
-        specifier: ^5.1.3
-        version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.2.4)
       eslint-plugin-qunit:
         specifier: ^8.0.1
         version: 8.0.1(eslint@8.56.0)
@@ -252,6 +249,9 @@ importers:
       prettier:
         specifier: ^3.2.4
         version: 3.2.4
+      prettier-plugin-ember-template-tag:
+        specifier: ^1.1.0
+        version: 1.1.0(prettier@3.2.4)
       qunit:
         specifier: ^2.20.0
         version: 2.20.0
@@ -4945,6 +4945,10 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
+  /content-tag@1.2.2:
+    resolution: {integrity: sha512-9guqKIx2H+78N17otBpl8yLZbQGL5q1vBO/jDb3gF2JjixtcVpC62jDUNxjVMNoaZ09oxRX84ZOD6VX02qkVvg==}
+    dev: true
+
   /content-tag@2.0.1:
     resolution: {integrity: sha512-jxsETSDs5NbNwyiDuIp672fUMhUyu8Qxc5MOBOJOcgW/fQESI6o5K1LBDrnEE7Bh810a685lWEZHTF4jQYGEEw==}
     dev: true
@@ -6132,6 +6136,17 @@ packages:
       parse-static-imports: 1.1.0
       string.prototype.matchall: 4.0.10
       validate-peer-dependencies: 1.2.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /ember-template-imports@4.0.0:
+    resolution: {integrity: sha512-Kw1FnFX3MrBesfsjJDFvVgOf1mANOvMprAH1ngDd5SvdlkltNWCF2UKI9WXKQV3lw5noQC1+n6S80L9Q03D3Hw==}
+    engines: {node: 16.* || >= 18}
+    dependencies:
+      broccoli-stew: 3.0.0
+      content-tag: 1.2.2
+      ember-cli-version-checker: 5.1.2
     transitivePeerDependencies:
       - supports-color
     dev: true

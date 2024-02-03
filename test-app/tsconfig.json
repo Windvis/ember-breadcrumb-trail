@@ -8,7 +8,7 @@
     "paths": {
       "test-app/tests/*": ["tests/*"],
       "test-app/*": ["app/*"],
-      "*": ["types/*"]
-    }
-  }
+      "*": ["types/*"],
+    },
+  },
 }
