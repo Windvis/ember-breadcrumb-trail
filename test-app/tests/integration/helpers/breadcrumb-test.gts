@@ -4,9 +4,10 @@ import { render, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 
 // TODO, find out why the "nice" import doesn't work here
-// import { breadcrumb, breadcrumbs } from 'ember-breadcrumb-trail';
-import breadcrumb from 'ember-breadcrumb-trail/helpers/breadcrumb';
-import breadcrumbs from 'ember-breadcrumb-trail/helpers/breadcrumbs';
+import { breadcrumb, breadcrumbs } from 'ember-breadcrumb-trail';
+// console.log(breadcrumbs);
+// import breadcrumb from 'ember-breadcrumb-trail/helpers/breadcrumb';
+// import breadcrumbs from 'ember-breadcrumb-trail/helpers/breadcrumbs';
 
 module('Integration | Helper | breadcrumb', function (hooks) {
   setupRenderingTest(hooks);
