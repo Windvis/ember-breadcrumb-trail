@@ -1,5 +1,6 @@
 import Helper from '@ember/component/helper';
 import { inject as service } from '@ember/service';
+import type { BreadcrumbData } from '../private-types.ts';
 import type BreadcrumbsService from '../services/breadcrumbs.ts';
 
 type TitleParts = [title: string];
@@ -25,7 +26,7 @@ export default class BreadcrumbHelper extends Helper<BreadcrumbHelperSignature> 
   compute(breadcrumbTitleParts: TitleParts, optionalData: OptionalData) {
     const breadcrumbTitle = breadcrumbTitleParts.join('');
 
-    const breadcrumbData = {
+    const breadcrumbData: BreadcrumbData = {
       data: optionalData,
       title: breadcrumbTitle,
     };
