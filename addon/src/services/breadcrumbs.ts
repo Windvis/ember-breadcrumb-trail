@@ -2,12 +2,7 @@ import { guidFor } from '@ember/object/internals';
 import { scheduleOnce, next } from '@ember/runloop';
 import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
-
-type BreadcrumbId = string;
-type BreadcrumbData = {
-  title: string;
-  data: Record<string, unknown>;
-};
+import type { BreadcrumbData, BreadcrumbId } from '../private-types';
 
 export default class BreadcrumbsService extends Service {
   @tracked breadcrumbData: Map<BreadcrumbId, BreadcrumbData> = new Map();
@@ -18,7 +13,7 @@ export default class BreadcrumbsService extends Service {
     return [...this.breadcrumbData.values()];
   }
 
-  addBreadcrumb(breadcrumbData: BreadcrumbData): string {
+  addBreadcrumb(breadcrumbData: BreadcrumbData): BreadcrumbId {
     this.scheduleDataUpdate();
 
     const uniqueId = generateUniqueId();
@@ -60,6 +55,6 @@ export default class BreadcrumbsService extends Service {
   }
 }
 
-function generateUniqueId(): string {
+function generateUniqueId(): BreadcrumbId {
   return guidFor({});
 }
