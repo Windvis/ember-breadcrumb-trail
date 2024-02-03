@@ -1,6 +1,6 @@
 import Helper from '@ember/component/helper';
 import { inject as service } from '@ember/service';
-import type BreadcrumbsService from '../services/breadcrumbs';
+import type BreadcrumbsService from '../services/breadcrumbs.ts';
 
 type BreadcrumbData = {
   title: string;
