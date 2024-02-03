@@ -32,9 +32,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "concurrently 'npm:build:*'",
-    "build:js": "rollup --config",
-    "build:types": "glint --declaration",
+    "build": "rollup --config",
     "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
     "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
     "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
@@ -43,9 +41,7 @@
     "lint:js:fix": "eslint . --fix",
     "lint:types": "glint",
     "prepack": "rollup --config",
-    "start": "concurrently 'npm:start:*'",
-    "start:js": "rollup --config --watch --no-watch.clearScreen",
-    "start:types": "glint --declaration --watch",
+    "start": "rollup --config --watch --no-watch.clearScreen",
     "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
   },
   "dependencies": {
@@ -74,6 +70,8 @@
     "eslint-plugin-ember": "^11.12.0",
     "eslint-plugin-n": "^16.4.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "execa": "^8.0.1",
+    "fix-bad-declaration-output": "^1.1.0",
     "prettier": "^3.1.1",
     "prettier-plugin-ember-template-tag": "^1.1.0",
     "rollup": "^4.9.1",
