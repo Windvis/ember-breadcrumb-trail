@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2024-08-09)
 
 ember-breadcrumb-trail 1.0.0 (major)
