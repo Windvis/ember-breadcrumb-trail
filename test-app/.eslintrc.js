@@ -7,11 +7,7 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   plugins: ['ember', '@typescript-eslint'],
-  extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:ember/recommended'],
   env: {
     browser: true,
   },
@@ -19,7 +15,7 @@ module.exports = {
   overrides: [
     // ts files
     {
-      files: ['**/*.ts'],
+      files: ['**/*.{ts,gts}'],
       extends: [
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
@@ -48,7 +44,7 @@ module.exports = {
     },
     {
       // test files
-      files: ['tests/**/*-test.{js,ts}'],
+      files: ['tests/**/*-test.{js,ts,gts}'],
       extends: ['plugin:qunit/recommended'],
     },
   ],

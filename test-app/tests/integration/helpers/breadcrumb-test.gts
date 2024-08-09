@@ -1,13 +1,14 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, settled } from '@ember/test-helpers';
-import { hbs } from 'ember-cli-htmlbars';
+import { tracked } from '@glimmer/tracking';
+import { breadcrumb, breadcrumbs } from 'ember-breadcrumb-trail';
 
 module('Integration | Helper | breadcrumb', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it adds a breadcrumb when rendered', async function (assert) {
-    await render(hbs`
+    await render(<template>
       <ol>
         {{#each (breadcrumbs) as |breadcrumb|}}
           <li data-test-breadcrumb-item>{{breadcrumb.title}}</li>
@@ -15,13 +16,13 @@ module('Integration | Helper | breadcrumb', function (hooks) {
       </ol>
 
       {{breadcrumb "foo"}}
-    `);
+    </template>);
 
     assert.dom('[data-test-breadcrumb-item]').hasText('foo');
   });
 
   test('it combines all positional arguments into a single title', async function (assert) {
-    await render(hbs`
+    await render(<template>
       <ol>
         {{#each (breadcrumbs) as |breadcrumb|}}
           <li data-test-breadcrumb-item>{{breadcrumb.title}}</li>
@@ -29,13 +30,13 @@ module('Integration | Helper | breadcrumb', function (hooks) {
       </ol>
 
       {{breadcrumb "foo" " bar " "baz"}}
-    `);
+    </template>);
 
     assert.dom('[data-test-breadcrumb-item]').hasText('foo bar baz');
   });
 
   test("it's possible to access the passed in named arguments through the `data` key", async function (assert) {
-    await render(hbs`
+    await render(<template>
       <ol>
         {{#each (breadcrumbs) as |breadcrumb|}}
           <li>
@@ -47,7 +48,7 @@ module('Integration | Helper | breadcrumb', function (hooks) {
       </ol>
 
       {{breadcrumb "foo" route="index" isLink=false}}
-    `);
+    </template>);
 
     assert.dom('[data-test-title]').hasText('foo');
     assert.dom('[data-test-route]').hasText('index');
@@ -55,7 +56,7 @@ module('Integration | Helper | breadcrumb', function (hooks) {
   });
 
   test("it's possible to add multiple breadcrumbs from the same template", async function (assert) {
-    await render(hbs`
+    await render(<template>
       <ol>
         {{#each (breadcrumbs) as |breadcrumb|}}
           <li data-test-breadcrumb-item>{{breadcrumb.title}}</li>
@@ -64,21 +65,25 @@ module('Integration | Helper | breadcrumb', function (hooks) {
 
       {{breadcrumb "foo"}}
       {{breadcrumb "bar"}}
-    `);
+    </template>);
 
-    let breadcrumbs = this.element.querySelectorAll(
+    const breadcrumbElements = this.element.querySelectorAll(
       '[data-test-breadcrumb-item]',
     );
-    assert.strictEqual(breadcrumbs.length, 2);
-    assert.dom(breadcrumbs[0]).hasText('foo');
-    assert.dom(breadcrumbs[1]).hasText('bar');
+    assert.strictEqual(breadcrumbElements.length, 2);
+    assert.dom(breadcrumbElements[0]).hasText('foo');
+    assert.dom(breadcrumbElements[1]).hasText('bar');
   });
 
   test('it updates the breadcrumb when data changes', async function (assert) {
-    this.dynamicTitle = 'foo';
-    this.isLink = false;
+    class TestState {
+      @tracked dynamicTitle: string = 'foo';
+      @tracked isLink: boolean = false;
+    }
 
-    await render(hbs`
+    const state = new TestState();
+
+    await render(<template>
       <ol>
         {{#each (breadcrumbs) as |breadcrumb|}}
           <li data-test-breadcrumb-item>
@@ -88,17 +93,17 @@ module('Integration | Helper | breadcrumb', function (hooks) {
         {{/each}}
       </ol>
 
-      {{breadcrumb this.dynamicTitle isLink=this.isLink}}
-    `);
+      {{breadcrumb state.dynamicTitle isLink=state.isLink}}
+    </template>);
 
-    let title = assert.dom('[data-test-title]').hasText('foo');
-    let link = assert.dom('[data-test-named-arg-data]').hasText('false');
+    const title = assert.dom('[data-test-title]').hasText('foo');
+    const link = assert.dom('[data-test-named-arg-data]').hasText('false');
 
-    this.set('dynamicTitle', 'bar');
+    state.dynamicTitle = 'bar';
     await settled();
     title.hasText('bar');
 
-    this.set('isLink', true);
+    state.isLink = true;
     await settled();
     link.hasText('true');
   });
