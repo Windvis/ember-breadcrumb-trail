@@ -1,13 +1,17 @@
 {
   "name": "ember-breadcrumb-trail",
   "version": "1.0.0",
-  "description": "The default blueprint for Embroider v2 addons.",
+  "description": "A minimalistic but very flexible breadcrumb management solution for Ember applications.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "breadcrumbs"
   ],
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Windvis/ember-breadcrumb-trail.git"
+  },
   "license": "MIT",
-  "author": "",
+  "author": "Windvis",
   "exports": {
     ".": {
       "types": "./declarations/index.d.ts",
