@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "ember-cli",
-      "version": "5.6.0",
+      "version": "6.4.0",
       "blueprints": [
         {
           "name": "app",
@@ -13,8 +13,9 @@
           "options": [
             "--no-welcome",
             "--pnpm",
-            "--ci-provider=travis",
-            "--typescript"
+            "--ci-provider=none",
+            "--typescript",
+            "--no-ember-data"
           ]
         }
       ]
