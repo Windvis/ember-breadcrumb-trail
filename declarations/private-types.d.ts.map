@@ -1,0 +1,1 @@
+{"version":3,"file":"private-types.d.ts","sourceRoot":"","sources":["../src/private-types.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,cAAc,GAAG;IAC3B,KAAK,EAAE,MAAM,CAAC;IACd,IAAI,EAAE,MAAM,CAAC,MAAM,EAAE,OAAO,CAAC,CAAC;CAC/B,CAAC;AAEF,MAAM,MAAM,YAAY,GAAG,MAAM,CAAC"}
