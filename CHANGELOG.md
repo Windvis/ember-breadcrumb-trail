@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2025-07-21)
+
+ember-breadcrumb-trail 2.0.0 (major)
+
+#### :boom: Breaking Change
+* `ember-breadcrumb-trail`, `test-app`
+  * [#36](https://github.com/Windvis/ember-breadcrumb-trail/pull/36) Drop support for old Ember versions ([@Windvis](https://github.com/Windvis))
+
+#### :rocket: Enhancement
+* `ember-breadcrumb-trail`, `test-app`
+  * [#35](https://github.com/Windvis/ember-breadcrumb-trail/pull/35) Replace `inject` imports with `service` ([@charlesfries](https://github.com/charlesfries))
+
+#### Committers: 2
+- Charles Fries ([@charlesfries](https://github.com/charlesfries))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## Release (2024-08-09)
 
 ember-breadcrumb-trail 1.0.0 (major)
