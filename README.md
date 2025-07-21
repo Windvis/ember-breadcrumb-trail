@@ -11,8 +11,8 @@ This addon is heavily inspired by [ember-page-title](https://github.com/ember-cl
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.16 or above (lower versions might work, but aren't tested)
-* Ember CLI v3.16 or above
+* Ember.js v5.12 or above (lower versions might work, but aren't tested)
+* Ember CLI v5.12 or above
 * Works with Embroider (safe and optimized) 
 * Publishes Glint types
 
