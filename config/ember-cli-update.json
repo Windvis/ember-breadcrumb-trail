@@ -3,14 +3,13 @@
   "projectName": "ember-breadcrumb-trail",
   "packages": [
     {
-      "name": "@embroider/addon-blueprint",
-      "version": "2.11.0",
+      "name": "@ember/addon-blueprint",
+      "version": "0.17.0",
       "blueprints": [
         {
-          "name": "@embroider/addon-blueprint",
+          "name": "@ember/addon-blueprint",
           "isBaseBlueprint": true,
           "options": [
-            "--addon-location=addon",
             "--ci-provider=github",
             "--pnpm",
             "--typescript"

@@ -14,7 +14,7 @@
           "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
-      "pkgJSONPath": "./addon/package.json"
+      "pkgJSONPath": "./package.json"
     }
   },
   "description": "## Release (2025-07-21)\n\nember-breadcrumb-trail 2.0.0 (major)\n\n#### :boom: Breaking Change\n* `ember-breadcrumb-trail`, `test-app`\n  * [#36](https://github.com/Windvis/ember-breadcrumb-trail/pull/36) Drop support for old Ember versions ([@Windvis](https://github.com/Windvis))\n\n#### :rocket: Enhancement\n* `ember-breadcrumb-trail`, `test-app`\n  * [#35](https://github.com/Windvis/ember-breadcrumb-trail/pull/35) Replace `inject` imports with `service` ([@charlesfries](https://github.com/charlesfries))\n\n#### Committers: 2\n- Charles Fries ([@charlesfries](https://github.com/charlesfries))\n- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))\n"
