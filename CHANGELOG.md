@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-03-14)
+
+* ember-breadcrumb-trail 2.0.1 (patch)
+
+#### :house: Internal
+* `ember-breadcrumb-trail`
+  * [#39](https://github.com/Windvis/ember-breadcrumb-trail/pull/39) Switch to `@ember/addon-blueprint` ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## Release (2025-07-21)
 
 ember-breadcrumb-trail 2.0.0 (major)
